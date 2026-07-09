@@ -5,8 +5,7 @@
 
 // Global variables
 let selectedSymptoms = [];
-const BACKEND_URL = https://disease-prediction-ai-backend.onrender.com
-
+const BACKEND_URL = 'https://disease-prediction-ai-backend.onrender.com';
 // DOM Elements
 const symptomInput = document.getElementById('symptomInput');
 const selectedSymptomsDiv = document.getElementById('selectedSymptoms');
