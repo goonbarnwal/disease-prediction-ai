@@ -55,3 +55,47 @@ https://disease-prediction-ai-backend.onrender.com
 
 
 ## 📂 Project Structure
+Disease Prediction AI
+│
+├── Backend
+│ ├── app.py
+│ ├── models
+│ ├── data
+│ └── requirements.txt
+│
+└── frontend
+├── index.html
+├── style.css
+└── script.js
+
+
+
+## 🔌 API Endpoints
+
+### Health Check
+
+GET /api/health
+
+
+### Get Symptoms
+
+GET /api/symptoms
+
+
+### Predict Disease
+
+POST /api/predict
+
+
+
+## ⚠️ Disclaimer
+
+This AI tool provides predictions for educational purposes only and is not a substitute for professional medical advice. Always consult a healthcare professional for accurate diagnosis.
+
+
+## 👩‍💻 Author
+
+Goon Barnwal
+
+GitHub:
+https://github.com/goonbarnwal
