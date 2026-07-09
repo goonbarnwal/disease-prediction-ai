@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>Disease Prediction AI</h1>
+            </div>
+            <p class="tagline">Intelligent Health Risk Prediction Platform</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container main-container">
+        <!-- Symptoms Input Section -->
+        <section class="card symptoms-card">
+            <h2><i class="fas fa-search"></i> Analyze Symptoms</h2>
+            <p class="subtitle">Enter your symptoms below to get AI-powered diagnosis</p>
+            
+            <!-- Selected Symptoms Tags -->
+            <div class="selected-symptoms" id="selectedSymptoms">
+                <span class="placeholder">No symptoms selected yet</span>
+            </div>
+            
+            <!-- Input Area -->
+            <div class="input-group">
+                <div class="input-with-button">
+                    <input type="text" 
+                           id="symptomInput" 
+                           placeholder="Type a symptom (e.g., fever, headache, cough) and press Enter"
+                           autocomplete="off">
+                    <button onclick="addSymptom()" class="add-btn">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                </div>
+                <div class="hint">
+                    <i class="fas fa-info-circle"></i>
+                    Common symptoms: fever, cough, headache, fatigue, sore throat, vomiting, dizziness
+                </div>
+            </div>
+            
+            <!-- Quick Symptoms Buttons -->
+            <div class="quick-symptoms">
+                <h4>Quick Select:</h4>
+                <div class="quick-buttons">
+                    <button onclick="addQuickSymptom('fever')">Fever</button>
+                    <button onclick="addQuickSymptom('cough')">Cough</button>
+                    <button onclick="addQuickSymptom('headache')">Headache</button>
+                    <button onclick="addQuickSymptom('fatigue')">Fatigue</button>
+                    <button onclick="addQuickSymptom('sore_throat')">Sore Throat</button>
+                    <button onclick="addQuickSymptom('vomiting')">Vomiting</button>
+                </div>
+            </div>
+            
+            <!-- Analyze Button -->
+            <div class="analyze-section">
+                <button onclick="analyzeSymptoms()" class="analyze-btn" id="analyzeBtn">
+                    <i class="fas fa-stethoscope"></i> Analyze Symptoms
+                </button>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <span>AI is analyzing your symptoms...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="card results-card" id="resultsCard" style="display: none;">
+            <h2><i class="fas fa-clipboard-check"></i> Analysis Result</h2>
+            
+            <!-- Main Prediction -->
+            <div class="prediction-main" id="predictionResult">
+                <!-- Results will appear here -->
+            </div>
+            
+            <!-- Alternative Predictions -->
+            <div class="alternatives" id="alternativesSection" style="display: none;">
+                <h3><i class="fas fa-list-alt"></i> Other Possible Conditions</h3>
+                <div class="alternatives-list" id="alternativesList"></div>
+            </div>
+            
+            <!-- New Analysis Button -->
+            <div class="new-analysis">
+                <button onclick="resetAnalysis()" class="reset-btn">
+                    <i class="fas fa-redo"></i> New Analysis
+                </button>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="card info-card">
+            <h2><i class="fas fa-lightbulb"></i> How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <h4>Enter Symptoms</h4>
+                    <p>Add all symptoms you're experiencing</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <h4>AI Analysis</h4>
+                    <p>Our AI compares with 41 diseases & 131 symptoms</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <h4>Get Results</h4>
+                    <p>Receive prediction with precautions & advice</p>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>Disclaimer:</strong> This is an AI prediction tool, not a medical diagnosis. 
+                Always consult a healthcare professional for accurate diagnosis.
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Disease Prediction AI © 2024 | Intelligent Health Platform</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-cogs"></i> How It Works</a>
+                <a href="#"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
