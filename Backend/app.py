@@ -277,11 +277,18 @@ def predict():
 # START
 # ============================================
 if __name__ == '__main__':
+    import os
+    
     print("\n" + "=" * 60)
     print("🌐 BACKEND READY!")
     print(f"   Model: {model_name if model_name else 'Demo Mode'}")
     print(f"   Symptoms: {len(ALL_SYMPTOMS)}")
-    print("   URL: http://localhost:5000")
     print("=" * 60 + "\n")
+
+    port = int(os.environ.get("PORT", 5000))
     
-    app.run(debug=True, host='127.0.0.1', port=5000, use_reloader=False)
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False
+    )
